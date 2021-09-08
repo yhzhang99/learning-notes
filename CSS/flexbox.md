@@ -49,6 +49,34 @@
 
 在容器宽度有剩余时，flex-shrink也是不会生效的
 
+## flex-basis(item)
+设置的是元素在主轴上的初始尺寸，所谓的初始尺寸就是元素在flex-grow和flex-shrink生效前的尺寸
+
+浏览器根据这个属性，计算主轴是否有多余空间，默认值为auto，即项目的本来大小，如设置了width则元素尺寸由width/height决定（主轴方向），没有设置则由内容决定
+
+当设置为0的是，会根据内容撑开
+
+它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间
+
+## flex(item)
+flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto，也是比较难懂的一个复合属性
+
+flex: 1 = flex: 1 1 0%
+
+flex: 2 = flex: 2 1 0%
+
+flex: auto = flex: 1 1 auto
+
+flex: none = flex: 0 0 auto，常用于固定尺寸不伸缩
+
+flex:1 和 flex:auto 的区别，可以归结于flex-basis:0和flex-basis:auto的区别
+
+当设置为0时（绝对弹性元素），此时相当于告诉flex-grow和flex-shrink在伸缩的时候不需要考虑我的尺寸
+
+当设置为auto时（相对弹性元素），此时则需要在伸缩时将元素尺寸纳入考虑
+
+注意：建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值
+
 
 
 
